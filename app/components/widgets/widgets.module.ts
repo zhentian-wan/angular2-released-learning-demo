@@ -7,6 +7,7 @@ import {WidgetThree} from './widget-three.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [WidgetOneComponent, WidgetTwoComponent, WidgetThree],
+    entryComponents: [WidgetThree],
     exports: [WidgetOneComponent, WidgetTwoComponent, WidgetThree, CommonModule]
 })
 export class WidgetsModule {

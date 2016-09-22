@@ -1,17 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import {AlertMe} from "../../directives/alert.directive";
+import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
 import {SimpleService} from "../../serivces/simple.service";
+import {WidgetThree} from "../widgets/widget-three.component";
 
 @Component({
     moduleId: module.id,
     selector: 'home',
     templateUrl: 'home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-    constructor(private simpleService: SimpleService) {
+    @ViewChild('container', {
+        read: ViewContainerRef
+    }) container;
+
+    constructor(private resolver: ComponentFactoryResolver, private simpleService: SimpleService) {
     }
 
-    ngOnInit() { }
+    ngAfterContentInit(){
+        const WidgetFactory = this.resolver.resolveComponentFactory(WidgetThree);
+        this.container.createComponent(WidgetFactory);
+        this.container.createComponent(WidgetFactory);
+        this.container.createComponent(WidgetFactory);
+        this.container.createComponent(WidgetFactory);
+        this.container.createComponent(WidgetFactory);
+    }
 
 }

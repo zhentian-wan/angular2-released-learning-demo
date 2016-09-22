@@ -1,18 +1,16 @@
-import { Component, OnInit, ViewChild, Renderer } from '@angular/core';
+import {Component, OnInit, ViewChild, Renderer, ElementRef} from '@angular/core';
 
 @Component({
     moduleId: module.id,
     selector: 'widget-three',
-    templateUrl: 'widget-three.component.html'
+    template: `<input type="text" #inputRef/>`
 })
-export class WidgetThree implements OnInit {
+export class WidgetThree {
 
     @ViewChild('inputRef') input;
-    @ViewChild('divRef') div;
 
-    constructor(private renderer: Renderer) { }
-
-    ngOnInit() { }
+    constructor(private renderer: Renderer) {
+    }
 
     ngAfterViewInit(){
         this.renderer.invokeElementMethod(

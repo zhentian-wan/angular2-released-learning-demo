@@ -7,13 +7,12 @@ export class DirectivesModule {
         return [
             {
                 ngModule: DirectivesModule,
-                declarations: [AlertMe],
-                exports: [AlertMe]
+                declarations: [AlertMe]
             }
         ]
     }
 }
 
 export {
-
+    AlertMe
 }

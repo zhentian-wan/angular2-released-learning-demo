@@ -15,12 +15,10 @@ export class WidgetThree implements OnInit {
     ngOnInit() { }
 
     ngAfterViewInit(){
-        console.log(this.input.nativeElement);
-        console.log(this.div.nativeElement);
+        this.renderer.invokeElementMethod(
+            this.input.nativeElement,
+            'focus',
+            []
+        );
     }
-
-    do(){
-        alert("hjelow")
-    }
-
 }

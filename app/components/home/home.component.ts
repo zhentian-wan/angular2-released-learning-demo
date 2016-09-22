@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SimpleService} from '../../serivces/service.module';
+import {AlertMe} from "../../directives/alert.directive";
+import {SimpleService} from "../../serivces/simple.service";
 
 @Component({
     moduleId: module.id,

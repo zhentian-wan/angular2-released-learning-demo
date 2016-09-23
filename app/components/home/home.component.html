@@ -7,3 +7,9 @@
     This is also widget two
 </widget-two>
 <div #container></div>
+<button (click)="onClick()">New</button>
+<template #template let-desc="desc">
+    <h3>tempalte {{desc}}</h3>
+    <section>tempalte {{desc}}</section>
+    <footer>template {{desc}}</footer>
+</template>

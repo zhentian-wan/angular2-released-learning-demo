@@ -1,4 +1,4 @@
-import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
+import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ViewChild} from '@angular/core';
 import {SimpleService} from "../../serivces/simple.service";
 import {WidgetThree} from "../widgets/widget-three.component";
 
@@ -12,6 +12,7 @@ export class HomeComponent {
     @ViewChild('container', {
         read: ViewContainerRef
     }) container;
+    @ViewChild('template') template;
 
     constructor(private resolver: ComponentFactoryResolver, private simpleService: SimpleService) {
     }
@@ -23,6 +24,15 @@ export class HomeComponent {
         this.container.createComponent(WidgetFactory);
         this.container.createComponent(WidgetFactory);
         this.container.createComponent(WidgetFactory);
+    }
+
+    onClick(){
+        this.container.createEmbeddedView(
+            this.template,
+            {
+                desc: 'Good'
+            }
+        )
     }
 
 }
